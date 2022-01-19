@@ -39,6 +39,15 @@
   border-radius: 7px;
   margin: 10px 0;
   padding: 20px;
+  cursor: pointer;
+}
+
+.schedule:hover {
+  transform: translate3d(10px, 0, 0);
+  -webkit-transition: all 0.2s 0s ease-out;
+  -moz-transition: all 0.2s 0s ease-out;
+  -o-transition: all 0.2s 0s ease-out;
+  transition: all 0.2s 0s ease-out;
 }
 
 .schedule:first-child {
