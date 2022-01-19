@@ -1,4 +1,7 @@
-import './App.css';
+import './App.css'
+
+import Header from './components/Header'
+import Schedule from './components/Schedule'
 
 function App() {
   const schedules = [
@@ -65,18 +68,12 @@ function App() {
   ]
   return (
     <div className="App">
-      <header className="App-header">
-        <span>Schedules</span>
-        <span className='material-icons'>menu</span>
-      </header>
+      <Header />
 
       <main className='main'>
         <div className='schedules'>
           {schedules.map(schedule => (
-            <div className='schedule'>
-              <p className='schedule-title'>{schedule.title}</p>
-              <p className='schedule-title'>{schedule.details}</p>
-            </div>
+            <Schedule title={schedule.title} details={schedule.details} />
           ))}
         </div>
         <div className='logs'>
@@ -89,4 +86,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
