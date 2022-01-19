@@ -1,23 +1,90 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const schedules = [
+    {
+      title: 'Schedule title',
+      details: 'Schedule details'
+    },
+    {
+      title: 'Schedule title',
+      details: 'Schedule details'
+    },
+    {
+      title: 'Schedule title',
+      details: 'Schedule details'
+    },
+    {
+      title: 'Schedule title',
+      details: 'Schedule details'
+    },
+    {
+      title: 'Schedule title',
+      details: 'Schedule details'
+    },
+    {
+      title: 'Schedule title',
+      details: 'Schedule details'
+    },
+    {
+      title: 'Schedule title',
+      details: 'Schedule details'
+    },
+    {
+      title: 'Schedule title',
+      details: 'Schedule details'
+    },
+    {
+      title: 'Schedule title',
+      details: 'Schedule details'
+    },
+    {
+      title: 'Schedule title',
+      details: 'Schedule details'
+    },
+    {
+      title: 'Schedule title',
+      details: 'Schedule details'
+    },
+    {
+      title: 'Schedule title',
+      details: 'Schedule details'
+    },
+    {
+      title: 'Schedule title',
+      details: 'Schedule details'
+    },
+    {
+      title: 'Schedule title',
+      details: 'Schedule details'
+    }
+  ];
+
+  const logs = [
+    {},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}
+  ]
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <span>Schedules</span>
+        <span className='material-icons'>menu</span>
       </header>
+
+      <main className='main'>
+        <div className='schedules'>
+          {schedules.map(schedule => (
+            <div className='schedule'>
+              <p className='schedule-title'>{schedule.title}</p>
+              <p className='schedule-title'>{schedule.details}</p>
+            </div>
+          ))}
+        </div>
+        <div className='logs'>
+          <div className='log'>
+            <h1>LOGS</h1>
+          </div>
+        </div>
+      </main>
     </div>
   );
 }
