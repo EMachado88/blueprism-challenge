@@ -4,65 +4,20 @@ import Header from './components/Header'
 import Log from './components/Log'
 import Schedule from './components/Schedule'
 
-function App() {
-  const schedules = [
-    {
-      title: 'Schedule title',
-      details: 'Schedule details'
-    },
-    {
-      title: 'Schedule title',
-      details: 'Schedule details'
-    },
-    {
-      title: 'Schedule title',
-      details: 'Schedule details'
-    },
-    {
-      title: 'Schedule title',
-      details: 'Schedule details'
-    },
-    {
-      title: 'Schedule title',
-      details: 'Schedule details'
-    },
-    {
-      title: 'Schedule title',
-      details: 'Schedule details'
-    },
-    {
-      title: 'Schedule title',
-      details: 'Schedule details'
-    },
-    {
-      title: 'Schedule title',
-      details: 'Schedule details'
-    },
-    {
-      title: 'Schedule title',
-      details: 'Schedule details'
-    },
-    {
-      title: 'Schedule title',
-      details: 'Schedule details'
-    },
-    {
-      title: 'Schedule title',
-      details: 'Schedule details'
-    },
-    {
-      title: 'Schedule title',
-      details: 'Schedule details'
-    },
-    {
-      title: 'Schedule title',
-      details: 'Schedule details'
-    },
-    {
-      title: 'Schedule title',
-      details: 'Schedule details'
+import axios from 'axios'
+import { useEffect, useState } from 'react'
+
+const App = () => {
+  const [schedules, setSchedules] = useState([]);
+
+  useEffect(() => {
+    const fetchSchedules = async () => {
+      const { data } = await axios.get('http://localhost:3000/schedules')
+      setSchedules(data)
     }
-  ];
+
+    fetchSchedules()
+  }, [])
 
   const logs = [
     {},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}

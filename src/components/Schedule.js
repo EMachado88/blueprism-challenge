@@ -1,8 +1,8 @@
-const Schedule = ({ title, details }) => {
+const Schedule = ({ name, description }) => {
     return (
         <div className='schedule'>
-          <p className='schedule-title'>{title}</p>
-          <p className='schedule-title'>{details}</p>
+          <p className='schedule-title'>{name}</p>
+          <p className='schedule-title'>{description}</p>
         </div>
     )
 }
