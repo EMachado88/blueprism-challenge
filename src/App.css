@@ -54,7 +54,8 @@
   transform: translate3d(10px, 0, 0);
 }
 
-.schedule:active {
+.schedule:active,
+.schedule.active {
   transform: translate3d(10px, 0, 0);
   background-color: #3a5ca1;
 }

@@ -50,6 +50,7 @@ const App = () => {
             <Schedule
               key={schedule.id}
               schedule={schedule}
+              selectedSchedule={selectedSchedule}
               handleClickSchedule={handleClickSchedule}
             />
           ))}
