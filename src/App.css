@@ -57,7 +57,7 @@
 .schedule:active,
 .schedule.active {
   transform: translate3d(10px, 0, 0);
-  background-color: #3a5ca1;
+  background-color: #4a6299;
 }
 
 .schedule:first-child {
