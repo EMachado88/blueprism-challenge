@@ -6,7 +6,7 @@ const Log = ({
 }) => {
   return (
     <div className='log'>
-      <h1>{serverName}</h1>
+      <h3>{serverName}</h3>
       <p>{status}</p>
     </div>
   )
