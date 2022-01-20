@@ -37,7 +37,7 @@ const App = () => {
       setFilteredLogs(filteredLogs)
       setSelectedSchedule(id)
     },
-    [],
+    [logs],
   )
   
   return (
