@@ -56,12 +56,16 @@ const App = () => {
           ))}
         </div>
         <div className='logs'>
-          {filteredLogs.map((log, index) => (
+          {filteredLogs.length ? filteredLogs.map((log) => (
             <Log
               key={log.id}
               log={log}
             />
-          ))}
+          )) : (
+            <div className='empty-logs'>
+              <h1>Select a schedule to view its logs</h1>
+            </div>
+          )}
         </div>
       </main>
     </div>
