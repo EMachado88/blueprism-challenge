@@ -1,6 +1,7 @@
 import './App.css'
 
 import Header from './components/Header'
+import Log from './components/Log'
 import Schedule from './components/Schedule'
 
 function App() {
@@ -78,9 +79,9 @@ function App() {
           ))}
         </div>
         <div className='logs'>
-          <div className='log'>
-            <h1>LOGS</h1>
-          </div>
+          {logs.map(log => (
+            <Log />
+          ))}
         </div>
       </main>
     </div>
