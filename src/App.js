@@ -48,7 +48,7 @@ const App = () => {
               schedule.description.toLowerCase().includes(scheduleQuery.toLocaleLowerCase())
     })
     setFilteredSchedules(filteredSchedules)
-  }, [scheduleQuery])
+  }, [scheduleQuery, schedules])
 
   useEffect(() => {
     const fetchSchedules = async () => {
