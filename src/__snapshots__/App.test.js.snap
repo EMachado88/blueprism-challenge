@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders App correctly 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App-header"
+  >
+    <span>
+      Schedules
+    </span>
+    <span
+      className="material-icons menu"
+    >
+      menu
+    </span>
+  </header>
+  <main
+    className="main"
+  >
+    <div
+      className="schedules"
+    >
+      <div
+        className="filters mb-30"
+      >
+        <h3
+          className="uppercase mb-10"
+        >
+          Search
+        </h3>
+        <input
+          onChange={[Function]}
+          placeholder="Search by name or description"
+          type="text"
+        />
+      </div>
+    </div>
+    <div
+      className="logs"
+    >
+      <div
+        className="empty-logs"
+      >
+        <h1>
+          Select a schedule to view its logs
+        </h1>
+      </div>
+    </div>
+  </main>
+</div>
+`;
