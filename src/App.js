@@ -9,6 +9,8 @@ import { useEffect, useState } from 'react'
 
 const App = () => {
   const [schedules, setSchedules] = useState([]);
+  const [logs, setLogs] = useState([]);
+  const [filteredLogs, setFilteredLogs] = useState([]);
 
   useEffect(() => {
     const fetchSchedules = async () => {
@@ -16,7 +18,13 @@ const App = () => {
       setSchedules(data)
     }
 
+    const fetchLogs = async () => {
+      const { data } = await axios.get('http://localhost:3000/scheduleLogs')
+      setLogs(data)
+    }
+
     fetchSchedules()
+    fetchLogs()
   }, [])
 
   const logs = [
@@ -34,7 +42,7 @@ const App = () => {
           ))}
         </div>
         <div className='logs'>
-          {logs.map((log, index) => (
+          {filteredLogs.map((log, index) => (
             <Log key={index} />
           ))}
         </div>
