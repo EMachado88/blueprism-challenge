@@ -1,11 +1,9 @@
-const Log = (
-  { 
-    log: {
-      serverName,
-      status
-    } 
+const Log = ({ 
+  log: {
+    serverName,
+    status
   }
-) => {
+}) => {
   return (
     <div className='log'>
       <h1>{serverName}</h1>
