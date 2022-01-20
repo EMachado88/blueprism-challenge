@@ -2,6 +2,7 @@
   max-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #9089a3;
 }
 
 .App > * {
