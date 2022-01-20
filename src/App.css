@@ -129,7 +129,7 @@ button:active {
   margin-right: 30px;
   margin-bottom: 30px;
   padding: 20px;
-  flex: 0 1 24.75%;
+  width: calc(25% - 80px);
   flex-wrap: wrap;
   box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.25);
 
@@ -137,6 +137,11 @@ button:active {
   -moz-transition: all 0.2s 0s ease-out;
   -o-transition: all 0.2s 0s ease-out;
   transition: all 0.2s 0s ease-out;
+}
+
+.log > p {
+  display: flex;
+  justify-content: space-between;
 }
 
 .log:hover {
