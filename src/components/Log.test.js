@@ -12,10 +12,11 @@ test('Renders Log correctly', () => {
     'scheduleId': 87584078
   }
 
-  const component = renderer.create(
-    <Log log={log} />,
-  )
+  const tree = renderer
+    .create(
+      <Log log={log} />,
+    )
+    .toJSON()
 
-  let tree = component.toJSON()
   expect(tree).toMatchSnapshot()
 })
