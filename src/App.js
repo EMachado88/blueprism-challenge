@@ -15,6 +15,24 @@ const App = () => {
   const [logs, setLogs] = useState([])
   const [filteredLogs, setFilteredLogs] = useState([])
 
+  const handleClickSchedule = useCallback(
+    (id) => () => {
+      const filteredLogs = logs.filter(log => log.scheduleId === id)
+
+      setFilteredLogs(filteredLogs)
+      setSelectedSchedule(id)
+    },
+    [logs],
+  )
+
+  const toggleIsRetired = useCallback(
+    (id) => () => {
+      const schedule = schedules.find(schedule => schedule.id === id)
+      schedule.isRetired = !schedule.isRetired
+    },
+    [schedules],
+  )
+
   useEffect(() => {
     const fetchSchedules = async () => {
       const { data } = await axios.get(`${API_URL}/schedules`)
@@ -29,16 +47,6 @@ const App = () => {
     fetchSchedules()
     fetchLogs()
   }, [])
-
-  const handleClickSchedule = useCallback(
-    (id) => () => {
-      const filteredLogs = logs.filter(log => log.scheduleId === id)
-
-      setFilteredLogs(filteredLogs)
-      setSelectedSchedule(id)
-    },
-    [logs],
-  )
   
   return (
     <div className="App">
@@ -52,6 +60,7 @@ const App = () => {
               schedule={schedule}
               selectedSchedule={selectedSchedule}
               handleClickSchedule={handleClickSchedule}
+              toggleIsRetired={toggleIsRetired}
             />
           ))}
         </div>
