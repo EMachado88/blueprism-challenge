@@ -1,3 +1,32 @@
+button {
+  background-color: #898fa3;
+  border: 3.5px solid #898fa3;
+  border-radius: 3.5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bolder;
+  font-size: 16px;
+  padding: 7px;
+  cursor: pointer;
+
+  -webkit-transition: all 0.2s 0s ease-out;
+  -moz-transition: all 0.2s 0s ease-out;
+  -o-transition: all 0.2s 0s ease-out;
+  transition: all 0.2s 0s ease-out;
+}
+
+button:hover,
+button:active {
+  background-color: #282c34;
+  border-radius: 3.5px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 16px;
+  color: #898fa3;
+  padding: 7px;
+  cursor: pointer;
+}
+
 .App {
   max-height: 100vh;
   display: flex;
@@ -67,6 +96,11 @@
 
 .schedule:last-child {
   margin-bottom: 0;
+}
+
+.schedule .schedule-button {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .logs {
