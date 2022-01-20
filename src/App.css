@@ -2,7 +2,7 @@
   max-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #9089a3;
+  background-color: #898fa3;
 }
 
 .App > * {
@@ -17,6 +17,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.25);
 }
 
 .main {
@@ -41,14 +42,21 @@
   margin: 10px 0;
   padding: 20px;
   cursor: pointer;
-}
+  box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.25);
 
-.schedule:hover {
-  transform: translate3d(10px, 0, 0);
   -webkit-transition: all 0.2s 0s ease-out;
   -moz-transition: all 0.2s 0s ease-out;
   -o-transition: all 0.2s 0s ease-out;
   transition: all 0.2s 0s ease-out;
+}
+
+.schedule:hover {
+  transform: translate3d(10px, 0, 0);
+}
+
+.schedule:active {
+  transform: translate3d(10px, 0, 0);
+  background-color: #3a5ca1;
 }
 
 .schedule:first-child {
