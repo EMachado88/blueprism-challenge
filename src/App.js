@@ -7,19 +7,22 @@ import Schedule from './components/Schedule'
 import axios from 'axios'
 import { useCallback, useEffect, useState } from 'react'
 
+const API_URL = 'http://localhost:3000'
+
 const App = () => {
-  const [schedules, setSchedules] = useState([]);
-  const [logs, setLogs] = useState([]);
-  const [filteredLogs, setFilteredLogs] = useState([]);
+  const [schedules, setSchedules] = useState([])
+  const [selectedSchedule, setSelectedSchedule] = useState(0)
+  const [logs, setLogs] = useState([])
+  const [filteredLogs, setFilteredLogs] = useState([])
 
   useEffect(() => {
     const fetchSchedules = async () => {
-      const { data } = await axios.get('http://localhost:3000/schedules')
+      const { data } = await axios.get(`${API_URL}/schedules`)
       setSchedules(data)
     }
 
     const fetchLogs = async () => {
-      const { data } = await axios.get('http://localhost:3000/scheduleLogs')
+      const { data } = await axios.get(`${API_URL}/scheduleLogs`)
       setLogs(data)
     }
 
@@ -32,6 +35,7 @@ const App = () => {
       const filteredLogs = logs.filter(log => log.scheduleId === id)
 
       setFilteredLogs(filteredLogs)
+      setSelectedSchedule(id)
     },
     [],
   )
