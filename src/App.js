@@ -13,7 +13,10 @@ const API_URL = 'http://localhost:3000'
 
 const App = () => {
   const [schedules, setSchedules] = useState([])
+  const [filteredSchedules, setFilteredSchedules] = useState([])
   const [selectedSchedule, setSelectedSchedule] = useState(0)
+  const [scheduleQuery, setScheduleQuery] = useState('')
+
   const [logs, setLogs] = useState([])
   const [filteredLogs, setFilteredLogs] = useState([])
 
@@ -36,6 +39,18 @@ const App = () => {
   )
 
   useEffect(() => {
+    setFilteredSchedules(schedules)
+  }, [schedules])
+
+  useEffect(() => {
+    const filteredSchedules = schedules.filter(schedule => {
+      return schedule.name.toLowerCase().includes(scheduleQuery.toLocaleLowerCase()) ||
+              schedule.description.toLowerCase().includes(scheduleQuery.toLocaleLowerCase())
+    })
+    setFilteredSchedules(filteredSchedules)
+  }, [scheduleQuery])
+
+  useEffect(() => {
     const fetchSchedules = async () => {
       const { data } = await axios.get(`${API_URL}/schedules`)
       setSchedules(data)
@@ -56,9 +71,11 @@ const App = () => {
 
       <main className='main'>
         <div className='schedules'>
-          <Filters />
+          <Filters
+            setScheduleQuery={setScheduleQuery}
+          />
 
-          {schedules.map(schedule => (
+          {filteredSchedules.map(schedule => (
             <Schedule
               key={schedule.id}
               schedule={schedule}
