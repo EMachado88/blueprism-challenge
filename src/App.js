@@ -75,12 +75,12 @@ function App() {
       <main className='main'>
         <div className='schedules'>
           {schedules.map(schedule => (
-            <Schedule title={schedule.title} details={schedule.details} />
+            <Schedule key={schedule.id} name={schedule.name} description={schedule.description} />
           ))}
         </div>
         <div className='logs'>
-          {logs.map(log => (
-            <Log />
+          {logs.map((log, index) => (
+            <Log key={index} />
           ))}
         </div>
       </main>
