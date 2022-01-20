@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Log correctly 1`] = `
+<div
+  className="log"
+>
+  <h3
+    className="text-center"
+  >
+    laborum est dolore
+  </h3>
+  <hr />
+  <p>
+    <strong>
+      id:
+    </strong>
+     
+    <span>
+      10375504
+    </span>
+  </p>
+  <p>
+    <strong>
+      Start:
+    </strong>
+     
+    <span>
+      9/16/2021
+    </span>
+  </p>
+  <p>
+    <strong>
+      End:
+    </strong>
+     
+    <span>
+      6/20/2021
+    </span>
+  </p>
+  <p>
+    <strong>
+      Status:
+    </strong>
+     
+    <span>
+      Completed
+    </span>
+  </p>
+</div>
+`;
