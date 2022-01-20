@@ -1,6 +1,7 @@
 import './helpers.css'
 import './App.css'
 
+import Filters from './components/Filters'
 import Header from './components/Header'
 import Log from './components/Log'
 import Schedule from './components/Schedule'
@@ -55,6 +56,8 @@ const App = () => {
 
       <main className='main'>
         <div className='schedules'>
+          <Filters />
+
           {schedules.map(schedule => (
             <Schedule
               key={schedule.id}
