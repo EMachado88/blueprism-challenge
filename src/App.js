@@ -5,7 +5,7 @@ import Log from './components/Log'
 import Schedule from './components/Schedule'
 
 import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 const App = () => {
   const [schedules, setSchedules] = useState([]);
@@ -27,9 +27,14 @@ const App = () => {
     fetchLogs()
   }, [])
 
-  const logs = [
-    {},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}
-  ]
+  const handleClickSchedule = useCallback(
+    (id) => () => {
+      const filteredLogs = logs.filter(log => log.scheduleId === id)
+
+      setFilteredLogs(filteredLogs)
+    },
+    [],
+  )
   
   return (
     <div className="App">
@@ -38,12 +43,21 @@ const App = () => {
       <main className='main'>
         <div className='schedules'>
           {schedules.map(schedule => (
-            <Schedule key={schedule.id} name={schedule.name} description={schedule.description} />
+            <Schedule
+              key={schedule.id}
+              id={schedule.id}
+              name={schedule.name}
+              description={schedule.description}
+              handleClickSchedule={handleClickSchedule}
+            />
           ))}
         </div>
         <div className='logs'>
           {filteredLogs.map((log, index) => (
-            <Log key={index} />
+            <Log
+              key={log.id}
+              log={log}
+            />
           ))}
         </div>
       </main>
