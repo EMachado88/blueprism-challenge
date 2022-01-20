@@ -45,9 +45,7 @@ const App = () => {
           {schedules.map(schedule => (
             <Schedule
               key={schedule.id}
-              id={schedule.id}
-              name={schedule.name}
-              description={schedule.description}
+              schedule={schedule}
               handleClickSchedule={handleClickSchedule}
             />
           ))}

@@ -1,4 +1,11 @@
-const Schedule = ({ name, description, id, handleClickSchedule }) => {
+const Schedule = ({
+  schedule: {
+    name,
+    description,
+    id
+  },
+  handleClickSchedule
+}) => {
     return (
         <div onClick={handleClickSchedule(id)} className='schedule'>
           <p className='schedule-name'>{name}</p>
