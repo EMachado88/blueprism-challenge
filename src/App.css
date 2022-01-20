@@ -98,9 +98,14 @@ button:active {
   margin-bottom: 0;
 }
 
+.schedule .schedule-description {
+  margin-bottom: 15px;
+}
+
 .schedule .schedule-button {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logs {
