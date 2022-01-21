@@ -30,7 +30,7 @@ button:active {
 }
 
 select,
-input {
+input:not([type="checkbox"]) {
   width: 100%;
   padding: 10px;
   font-size: 16px;
@@ -45,13 +45,21 @@ input::placeholder {
   color: #fff;
 }
 
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+label {
+  text-transform: uppercase;
+}
+
 /* Base app */
 
 .App {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #898fa3;
+  background-color: rgb(137 143 163 / 55%);
   color: #282c34;
 }
 
