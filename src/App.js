@@ -80,6 +80,8 @@ const App = () => {
           <Filters
             setScheduleQuery={setScheduleQuery}
             setScheduleInterval={setScheduleInterval}
+            setFilteredLogs={setFilteredLogs}
+            setSelectedSchedule={setSelectedSchedule}
           />
 
           {filteredSchedules.map(schedule => (

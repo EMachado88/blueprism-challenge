@@ -1,10 +1,22 @@
-const Filters = ({ setScheduleQuery, setScheduleInterval }) => {
+const Filters = ({
+  setScheduleQuery,
+  setScheduleInterval,
+  setFilteredLogs,
+  setSelectedSchedule
+}) => {
+  const resetSelectedSchedule = () => {
+    setFilteredLogs([])
+    setSelectedSchedule(0)
+  }
+
   const handleChangeQuery = (event) => {
     setScheduleQuery(event.target.value)
+    resetSelectedSchedule()
   }
 
   const handleChangeInterval = (event) => {
     setScheduleInterval(event.target.value)
+    resetSelectedSchedule()
   }
 
   return (
