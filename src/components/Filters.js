@@ -9,7 +9,10 @@ const Filters = ({ setScheduleQuery, setScheduleInterval }) => {
 
   return (
     <div className='filters mb-30'>
-      <h3 className='uppercase mb-10'>Filters</h3>
+      <h3 className='uppercase mb-10 d-flex justify-between'>
+        <span>Filters</span>
+        <span className='material-icons menu'>tune</span>
+      </h3>
 
       <select className="mb-10" onChange={handleChangeInterval}>
         <option value="" key="0">Interval [any]</option>
