@@ -38,10 +38,13 @@ const Filters = ({
       </select>
 
       <input
+        className="mb-20"
         type='text'
         placeholder='Search by name or description'
         onChange={handleChangeQuery}
       />
+
+      <hr />
     </div>
   )
 }

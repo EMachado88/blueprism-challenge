@@ -34,6 +34,15 @@ input {
   width: 100%;
   padding: 10px;
   font-size: 16px;
+  background-color: rgb(40 44 52 / 60%);
+  color: #fff;
+  border-radius: 3.5px;
+  border: 3px solid #282c34;
+}
+
+select::placeholder,
+input::placeholder {
+  color: #fff;
 }
 
 /* Base app */
