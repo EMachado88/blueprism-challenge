@@ -17,6 +17,8 @@ const App = () => {
   const [selectedSchedule, setSelectedSchedule] = useState(0)
   const [scheduleInterval, setScheduleInterval] = useState('')
   const [scheduleQuery, setScheduleQuery] = useState('')
+  const [showRetired, setShowRetired] = useState(true)
+  const [showUnretired, setShowUnretired] = useState(true)
 
   const [logs, setLogs] = useState([])
   const [filteredLogs, setFilteredLogs] = useState([])
@@ -49,12 +51,15 @@ const App = () => {
         return (schedule.intervalType || '').includes(scheduleInterval)
       })
       .filter(schedule => {
+        return schedule.isRetired === showRetired || schedule.isRetired === !showUnretired
+      })
+      .filter(schedule => {
         return schedule.name.toLowerCase().includes(scheduleQuery.toLocaleLowerCase()) ||
                 schedule.description.toLowerCase().includes(scheduleQuery.toLocaleLowerCase())
       })
 
     setFilteredSchedules(filteredSchedules)
-  }, [scheduleQuery, scheduleInterval, schedules])
+  }, [scheduleQuery, scheduleInterval, schedules, showRetired, showUnretired])
 
   useEffect(() => {
     const fetchSchedules = async () => {
@@ -82,6 +87,8 @@ const App = () => {
             setScheduleInterval={setScheduleInterval}
             setFilteredLogs={setFilteredLogs}
             setSelectedSchedule={setSelectedSchedule}
+            setShowRetired={setShowRetired}
+            setShowUnretired={setShowUnretired}
           />
 
           {filteredSchedules.map(schedule => (

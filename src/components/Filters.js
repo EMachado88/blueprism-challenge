@@ -1,9 +1,16 @@
+import { useState } from "react"
+
 const Filters = ({
   setScheduleQuery,
   setScheduleInterval,
   setFilteredLogs,
-  setSelectedSchedule
+  setSelectedSchedule,
+  setShowRetired,
+  setShowUnretired
 }) => {
+  const [isRetired, setIsRetired] = useState(true)
+  const [isUnretired, setIsUnretired] = useState(true)
+
   const resetSelectedSchedule = () => {
     setFilteredLogs([])
     setSelectedSchedule(0)
@@ -16,6 +23,23 @@ const Filters = ({
 
   const handleChangeInterval = (event) => {
     setScheduleInterval(event.target.value)
+    resetSelectedSchedule()
+  }
+
+  const handleRetiredChange = (event) => {
+    console.log()
+    switch (event.target.id) {
+      case 'retired':
+        setIsRetired(event.target.checked)
+        setShowRetired(event.target.checked)
+        break;
+
+      case 'unretired':
+        setIsUnretired(event.target.checked)
+        setShowUnretired(event.target.checked)
+        break;
+    }
+
     resetSelectedSchedule()
   }
 
@@ -38,11 +62,35 @@ const Filters = ({
       </select>
 
       <input
-        className="mb-20"
+        className="mb-10"
         type='text'
         placeholder='Search by name or description'
         onChange={handleChangeQuery}
       />
+
+      <div className="d-flex mb-20">
+        <div className="d-flex w-50">
+          <input
+            type="checkbox"
+            id="retired"
+            name="retired"
+            checked={isRetired}
+            onChange={handleRetiredChange}
+          />
+          <label htmlFor="retired">Retired</label>
+        </div>
+
+        <div className="d-flex w-50">
+          <input
+            type="checkbox"
+            id="unretired"
+            name="unretired"
+            checked={isUnretired}
+            onChange={handleRetiredChange}
+          />
+          <label htmlFor="unretired">Unretired</label>
+        </div>
+      </div>
 
       <hr />
     </div>

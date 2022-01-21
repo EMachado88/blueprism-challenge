@@ -18,6 +18,10 @@
   text-transform: uppercase;
 }
 
+.w-50 {
+  width: 50%;
+}
+
 .mb-10 {
   margin-bottom: 10px;
 }
