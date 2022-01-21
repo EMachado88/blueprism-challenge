@@ -15,6 +15,7 @@ const App = () => {
   const [schedules, setSchedules] = useState([])
   const [filteredSchedules, setFilteredSchedules] = useState([])
   const [selectedSchedule, setSelectedSchedule] = useState(0)
+  const [scheduleInterval, setScheduleInterval] = useState('')
   const [scheduleQuery, setScheduleQuery] = useState('')
 
   const [logs, setLogs] = useState([])
@@ -43,12 +44,17 @@ const App = () => {
   }, [schedules])
 
   useEffect(() => {
-    const filteredSchedules = schedules.filter(schedule => {
-      return schedule.name.toLowerCase().includes(scheduleQuery.toLocaleLowerCase()) ||
-              schedule.description.toLowerCase().includes(scheduleQuery.toLocaleLowerCase())
-    })
+    const filteredSchedules = schedules
+      .filter(schedule => {
+        return (schedule.intervalType || '').includes(scheduleInterval)
+      })
+      .filter(schedule => {
+        return schedule.name.toLowerCase().includes(scheduleQuery.toLocaleLowerCase()) ||
+                schedule.description.toLowerCase().includes(scheduleQuery.toLocaleLowerCase())
+      })
+
     setFilteredSchedules(filteredSchedules)
-  }, [scheduleQuery, schedules])
+  }, [scheduleQuery, scheduleInterval, schedules])
 
   useEffect(() => {
     const fetchSchedules = async () => {
@@ -73,6 +79,7 @@ const App = () => {
         <div className='schedules'>
           <Filters
             setScheduleQuery={setScheduleQuery}
+            setScheduleInterval={setScheduleInterval}
           />
 
           {filteredSchedules.map(schedule => (
