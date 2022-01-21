@@ -1,10 +1,4 @@
-// Test
-
-// On click, check if it becomes active
-
-// on retire, check if isRetired
-
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 import Schedule from './Schedule'
 
@@ -29,4 +23,12 @@ describe('Schedule', () => {
      wrapper.simulate('click')
      expect(props.handleClickSchedule).toHaveBeenCalledTimes(1)
  })
+
+ it('Calls toggleIsRetired on retire/unretire button', () => {
+  const button = mount(<Schedule {...props} />)
+    .find('button')
+
+  button.simulate('click')
+  expect(props.toggleIsRetired).toHaveBeenCalledTimes(1)
+})
 })
