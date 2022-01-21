@@ -1,3 +1,5 @@
+/* Basics */
+
 button {
   background-color: #898fa3;
   border: 3.5px solid #898fa3;
@@ -33,6 +35,8 @@ input {
   padding: 10px;
   font-size: 16px;
 }
+
+/* Base app */
 
 .App {
   height: 100vh;
@@ -76,6 +80,8 @@ input {
 .main > * {
   overflow: auto;
 }
+
+/* Schedules */
 
 .schedules {
   margin-right: 30px;
@@ -138,6 +144,8 @@ input {
   justify-content: space-between;
   align-items: center;
 }
+
+/* Logs */
 
 .logs {
   flex-grow: 1;
