@@ -77,7 +77,7 @@ const Filters = ({
             checked={isRetired}
             onChange={handleRetiredChange}
           />
-          <label htmlFor="retired">Retired</label>
+          <label htmlFor="retired"><strong>Retired</strong></label>
         </div>
 
         <div className="d-flex w-50">
@@ -88,7 +88,7 @@ const Filters = ({
             checked={isUnretired}
             onChange={handleRetiredChange}
           />
-          <label htmlFor="unretired">Unretired</label>
+          <label htmlFor="unretired"><strong>Unretired</strong></label>
         </div>
       </div>
 
