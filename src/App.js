@@ -33,6 +33,7 @@ const App = () => {
     [logs],
   )
 
+  // Handler for retired/unretired button
   const toggleIsRetired = useCallback(
     (id) => () => {
       const schedule = schedules.find(schedule => schedule.id === id)
@@ -42,17 +43,16 @@ const App = () => {
   )
 
   useEffect(() => {
-    setFilteredSchedules(schedules)
-  }, [schedules])
-
-  useEffect(() => {
     const filteredSchedules = schedules
+      // Filter by schedule interval
       .filter(schedule => {
         return (schedule.intervalType || '').includes(scheduleInterval)
       })
+      // Filter by schedule retired/unretired
       .filter(schedule => {
         return schedule.isRetired === showRetired || schedule.isRetired === !showUnretired
       })
+      // Filter by schedule name or description
       .filter(schedule => {
         return schedule.name.toLowerCase().includes(scheduleQuery.toLocaleLowerCase()) ||
                 schedule.description.toLowerCase().includes(scheduleQuery.toLocaleLowerCase())
