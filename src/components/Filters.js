@@ -27,7 +27,6 @@ const Filters = ({
   }
 
   const handleRetiredChange = (event) => {
-    console.log()
     switch (event.target.id) {
       case 'retired':
         setIsRetired(event.target.checked)
@@ -37,6 +36,9 @@ const Filters = ({
       case 'unretired':
         setIsUnretired(event.target.checked)
         setShowUnretired(event.target.checked)
+        break;
+      
+      default:
         break;
     }
 
