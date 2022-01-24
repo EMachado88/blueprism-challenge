@@ -9,24 +9,29 @@ const Filters = ({
   setShowRetired,
   setShowUnretired
 }) => {
+  // Retired state
   const [isRetired, setIsRetired] = useState(true)
   const [isUnretired, setIsUnretired] = useState(true)
 
+  // Reset/unselect schedule
   const resetSelectedSchedule = () => {
     setFilteredLogs([])
     setSelectedSchedule(0)
   }
 
+  // Handler for search by name or description
   const handleChangeQuery = (event) => {
     setScheduleQuery(event.target.value)
     resetSelectedSchedule()
   }
 
+  // Handler for interval type change
   const handleChangeInterval = (event) => {
     setScheduleInterval(event.target.value)
     resetSelectedSchedule()
   }
 
+  // Handler for retired and unretired checkboxes
   const handleRetiredChange = (event) => {
     switch (event.target.id) {
       case 'retired':

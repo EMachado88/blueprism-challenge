@@ -12,6 +12,7 @@ import { useCallback, useEffect, useState } from 'react'
 const API_URL = 'http://localhost:3000'
 
 const App = () => {
+  // Schedules state
   const [schedules, setSchedules] = useState([])
   const [filteredSchedules, setFilteredSchedules] = useState([])
   const [selectedSchedule, setSelectedSchedule] = useState(0)
@@ -20,11 +21,14 @@ const App = () => {
   const [showRetired, setShowRetired] = useState(true)
   const [showUnretired, setShowUnretired] = useState(true)
 
+  // Logs state
   const [logs, setLogs] = useState([])
   const [filteredLogs, setFilteredLogs] = useState([])
 
+  // Intervals state
   const [intervals, setIntervals] = useState([])
 
+  // Handler for schedule clicks
   const handleClickSchedule = useCallback(
     (id) => () => {
       const filteredLogs = logs.filter(log => log.scheduleId === id)
@@ -63,14 +67,18 @@ const App = () => {
     setFilteredSchedules(filteredSchedules)
   }, [scheduleQuery, scheduleInterval, schedules, showRetired, showUnretired])
 
+  // Fetch from API at startup
   useEffect(() => {
+    // Fetch the schedules
     const fetchSchedules = async () => {
       const { data } = await axios.get(`${API_URL}/schedules`)
       setSchedules(data)
 
+      // Get interval types from schedules
       setIntervals([...new Set(data.map(schedule => schedule.intervalType))])
     }
 
+    // Fetch the logs
     const fetchLogs = async () => {
       const { data } = await axios.get(`${API_URL}/scheduleLogs`)
       setLogs(data)
