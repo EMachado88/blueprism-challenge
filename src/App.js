@@ -23,6 +23,8 @@ const App = () => {
   const [logs, setLogs] = useState([])
   const [filteredLogs, setFilteredLogs] = useState([])
 
+  const [intervals, setIntervals] = useState([])
+
   const handleClickSchedule = useCallback(
     (id) => () => {
       const filteredLogs = logs.filter(log => log.scheduleId === id)
@@ -65,6 +67,8 @@ const App = () => {
     const fetchSchedules = async () => {
       const { data } = await axios.get(`${API_URL}/schedules`)
       setSchedules(data)
+
+      setIntervals([...new Set(data.map(schedule => schedule.intervalType))])
     }
 
     const fetchLogs = async () => {
@@ -83,6 +87,7 @@ const App = () => {
       <main className='main'>
         <div className='schedules'>
           <Filters
+            intervals={intervals}
             setScheduleQuery={setScheduleQuery}
             setScheduleInterval={setScheduleInterval}
             setFilteredLogs={setFilteredLogs}
