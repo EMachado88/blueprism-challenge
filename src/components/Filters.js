@@ -58,7 +58,7 @@ const Filters = ({
         <span className='material-icons menu'>tune</span>
       </h3>
 
-      <select className="mb-10" onChange={handleChangeInterval}>
+      <select id="interval" className="mb-10" onChange={handleChangeInterval}>
         <option value="" key="0">Interval [any]</option>
         {intervals.map((interval, index) => (
           <>
