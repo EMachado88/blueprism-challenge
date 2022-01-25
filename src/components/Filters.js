@@ -60,14 +60,15 @@ const Filters = ({
 
       <select className="mb-10" onChange={handleChangeInterval}>
         <option value="" key="0">Interval [any]</option>
-        {intervals.map(interval => (
+        {intervals.map((interval, index) => (
           <>
-            <option value={interval} key="1">{interval}</option>
+            <option value={interval} key={index + 1}>{interval}</option>
           </>
         ))}
       </select>
 
       <input
+        id="searchQuery"
         className="mb-10"
         type='text'
         placeholder='Search by name or description'
