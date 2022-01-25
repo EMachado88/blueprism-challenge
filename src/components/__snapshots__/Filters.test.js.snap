@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filters Renders correctly 1`] = `
+<div
+  className="filters mb-30"
+>
+  <h3
+    className="uppercase mb-10 d-flex justify-between"
+  >
+    <span>
+      Filters
+    </span>
+    <span
+      className="material-icons menu"
+    >
+      tune
+    </span>
+  </h3>
+  <select
+    className="mb-10"
+    id="interval"
+    onChange={[Function]}
+  >
+    <option
+      value=""
+    >
+      Interval [any]
+    </option>
+    <option
+      value="Second"
+    >
+      Second
+    </option>
+    <option
+      value="Minute"
+    >
+      Minute
+    </option>
+    <option
+      value="Hour"
+    >
+      Hour
+    </option>
+    <option
+      value="Day"
+    >
+      Day
+    </option>
+    <option
+      value="Week"
+    >
+      Week
+    </option>
+    <option
+      value="Month"
+    >
+      Month
+    </option>
+  </select>
+  <input
+    className="mb-10"
+    id="searchQuery"
+    onChange={[Function]}
+    placeholder="Search by name or description"
+    type="text"
+  />
+  <div
+    className="d-flex mb-20"
+  >
+    <div
+      className="d-flex w-50"
+    >
+      <input
+        checked={true}
+        id="retired"
+        name="retired"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <label
+        htmlFor="retired"
+      >
+        <strong>
+          Retired
+        </strong>
+      </label>
+    </div>
+    <div
+      className="d-flex w-50"
+    >
+      <input
+        checked={true}
+        id="unretired"
+        name="unretired"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <label
+        htmlFor="unretired"
+      >
+        <strong>
+          Unretired
+        </strong>
+      </label>
+    </div>
+  </div>
+  <hr />
+</div>
+`;
