@@ -39,6 +39,7 @@ exports[`Renders App correctly 1`] = `
         </h3>
         <select
           className="mb-10"
+          id="interval"
           onChange={[Function]}
         >
           <option
